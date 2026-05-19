@@ -1,0 +1,135 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Agenda Consejo Pastoral</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="background"></div>
+
+  <header class="topbar">
+
+    <div class="logo-area">
+
+      <div class="logo">✝</div>
+
+      <div>
+        <h1>Consejo Pastoral Del Valle de Calamuchita</h1>
+        <p>Agenda De Actividades</p>
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="container">
+
+    <!-- RESUMEN -->
+
+    <section class="panel resumen">
+
+     
+      <div class="card-mini">
+        <span>Iglesias Participando</span>
+        <h2 id="totalIglesias">0</h2>
+      </div>
+     
+      <div class="card-mini">
+        <span>Eventos del Mes</span>
+        <h2 id="eventosMes">0</h2>
+      </div>
+      
+      <div class="card-mini">
+        <span>Total Eventos</span>
+        <h2 id="totalEventos">0</h2>
+      </div>
+
+    </section>
+
+    
+
+    <!-- CALENDARIO -->
+
+    <section class="panel calendario-panel">
+
+      <div class="panel-header calendario-header">
+
+        <button id="prevMes" class="nav-btn">◀</button>
+
+        <h2 id="mesActual"></h2>
+
+        <button id="nextMes" class="nav-btn">▶</button>
+
+      </div>
+
+      <div class="dias-semana">
+        <div>Dom</div>
+        <div>Lun</div>
+        <div>Mar</div>
+        <div>Mié</div>
+        <div>Jue</div>
+        <div>Vie</div>
+        <div>Sáb</div>
+      </div>
+
+      <div id="calendario" class="calendario-grid"></div>
+
+    </section>
+
+    <!-- FILTROS -->
+
+    <section class="panel filtros">
+
+      <div class="filtro-box">
+
+        <label>Mostrar por nombre de evento</label>
+
+        <input
+          type="text"
+          id="busqueda"
+          placeholder="Campaña, vigilia, conferencia..."
+        >
+
+      </div>
+
+      <div class="filtro-box">
+
+        <label>Mostrar por nombre de Iglesia</label>
+
+        <select id="filtroIglesia">
+          <option value="todos">Todas</option>
+        </select>
+
+      </div>
+
+    </section>
+
+    <!-- EVENTOS -->
+
+    <section class="panel">
+
+      <div class="panel-header">
+        <h2>📋 Actividades del Día</h2>
+      </div>
+
+      <div id="listaEventos" class="lista-eventos"></div>
+
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
