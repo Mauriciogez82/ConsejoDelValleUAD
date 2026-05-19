@@ -191,14 +191,17 @@ body{
 
 .calendario-grid{
   display:grid;
-  grid-template-columns:repeat(7,1fr);
+  grid-template-columns:repeat(7,minmax(0,1fr));
   gap:10px;
+  width:100%;
 }
 
 /* DIA */
 
 .dia{
   min-height:140px;
+  width:100%;
+  min-width:0;
   background:rgba(255,255,255,.9);
   border-radius:24px;
   padding:10px;
@@ -206,11 +209,7 @@ body{
   transition:.3s;
   cursor:pointer;
   border:2px solid transparent;
-}
-
-.dia:hover{
-  transform:translateY(-4px);
-  border-color:#b7e5ff;
+  overflow:hidden;
 }
 
 .numero-dia{
@@ -219,6 +218,13 @@ body{
   margin-bottom:10px;
   color:#557086;
 }
+
+.dia:hover{
+  transform:translateY(-4px);
+  border-color:#b7e5ff;
+}
+
+
 
 /* HOY */
 
@@ -238,11 +244,12 @@ body{
 
 .eventito{
   background:linear-gradient(135deg,#d9f3ff,#bfe7ff);
-  padding:6px 8px;
-  border-radius:12px;
-  margin-bottom:5px;
-  font-size:11px;
+  padding:5px 6px;
+  border-radius:10px;
+  margin-bottom:4px;
+  font-size:10px;
   color:#4d7087;
+
   overflow:hidden;
   white-space:nowrap;
   text-overflow:ellipsis;
@@ -322,22 +329,95 @@ body{
     font-size:14px;
   }
 
+  /* EVENTOS PEQUEÑOS */
+
+.eventito{
+  background:linear-gradient(135deg,#d9f3ff,#bfe7ff);
+  padding:5px 6px;
+  border-radius:10px;
+  margin-bottom:4px;
+  font-size:10px;
+  color:#4d7087;
+
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:950px){
+
+  .calendario-grid{
+    gap:6px;
+  }
+
+  .dia{
+    min-height:100px;
+    padding:6px;
+    border-radius:18px;
+  }
+
+  .numero-dia{
+    font-size:14px;
+    margin-bottom:6px;
+  }
+
   .eventito{
-    font-size:9px;
-    padding:4px;
+    font-size:8px;
+    padding:4px 5px;
   }
 
 }
 
-@media(max-width:700px){
 
-  .topbar{
-    padding:20px;
+}
+
+/* =========================
+   TELEFONOS PEQUEÑOS
+========================= */
+
+
+
+@media(max-width:480px){
+
+  .container{
+    width:98%;
   }
 
-  .logo-area{
-    flex-direction:column;
+  .panel{
+    padding:10px;
+  }
+
+  .dias-semana div{
+    font-size:9px;
+  }
+
+  .dia{
+    min-height:60px;
+    padding:3px;
+    border-radius:10px;
+  }
+
+  .numero-dia{
+    font-size:10px;
+  }
+
+  .eventito{
+    font-size:6px;
+    padding:2px;
+  }
+
+  #mesActual{
+    font-size:18px;
     text-align:center;
+  }
+
+  .nav-btn{
+    width:38px;
+    height:38px;
+    font-size:14px;
   }
 
 }
